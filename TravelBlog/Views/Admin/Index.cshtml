@@ -1,0 +1,30 @@
+﻿@using TravelBlog.Models.Siniflar
+@model List<Blog>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Listesi</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>BASLIK</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>DETAYLAR</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.BASLIK</td>
+            <td><a class="btn btn-danger" href="/Admin/BlogSil/@x.ID">Sil</a></td>
+            <td><a class="btn btn-warning" href="/Admin/BlogGetir/@x.ID">Güncelle</a></td>
+            <td><a class="btn btn-secondary" href="/Blog/BlogDetay/@x.ID">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a class="btn btn-primary" href="/Admin/YeniBlog/">Yeni Blog</a>

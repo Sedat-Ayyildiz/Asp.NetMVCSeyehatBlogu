@@ -1,0 +1,23 @@
+﻿@model TravelBlog.Models.Siniflar.Hakkimizda
+
+@{
+    ViewBag.Title = "HakkimizdaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkimizda Güncelleme</h2>
+<br />
+@using (Html.BeginForm("HakkimizdaGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.FOTOURL)
+    @Html.TextBoxFor(x => x.FOTOURL, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ACIKLAMA)
+    @Html.TextAreaFor(x => x.ACIKLAMA, new { @class = "form-control",rows=15 })
+    <br />
+    <button class="btn btn-success">Hakkımızda Güncelle</button>
+}
+

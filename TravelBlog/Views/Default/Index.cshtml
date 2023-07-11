@@ -1,0 +1,101 @@
+﻿@using TravelBlog.Models.Siniflar
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<body>
+    <div class="header-banner">
+        <div class="wrap">
+            <div class="banner">
+                <div class="indent">
+                    <h2 class="indent-left margin-bot" style="margin-left:80px">Tatil & Seyehat Bloğum</h2>
+                    <div class="banner-left">
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/MainTemplate/images/glass.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Restaurantlar</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/MainTemplate/images/flight.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Uçuşlar</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/MainTemplate/images/group.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Yapılacak Şeyler</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/MainTemplate/images/key.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Araba Kiralama</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="header_bottom_right_images">
+
+                        <div class="slider" style="width:650px;height:365px">
+                            <ul class="rslides" id="slider1">
+                                @foreach (var x in Model)
+                                {
+                                    <li><img src="@x.BLOGIMAGE" alt=""></li>
+                                    @*<li><img src="~/MainTemplate/images/img2.jpg" alt=""></li>
+                                        <li><img src="~/MainTemplate/images/img3.jpg" alt=""></li>
+                                        <li><img src="~/MainTemplate/images/img4.jpg" alt=""></li>*@
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class"content">
+        <div class="wrap">
+            <div class="wrapper">
+                <div class="con-top">
+                    <h3>Tatil Seyehat Bloğuma Hoşgeldiniz !</h3>
+                    <p>
+                        Bu bloğumuz size dünyanın dört bir yanında harika tatil deneyimleri sunmak için burada. Sizleri unutulmaz seyahat rotalarıyla tanıştırmak, keşfetmeniz için ilham vermek ve size en iyi tatil ipuçlarını sağlamak amacıyla buradayız.
+                       Burada, seyahat severler için kusursuz bir kaynak sunmaktan gurur duyuyoruz. Sizin için seçtiğimiz en popüler tatil destinasyonları hakkında ayrıntılı rehberler sunacağız. Plajlardan ormanlara, dağlardan şehirlere kadar, her zevke ve bütçeye uygun tatil seçenekleri bulabileceksiniz.
+                        Ayrıca, seyahat tecrübelerimizi ve kişisel hikayelerimizi paylaşarak sizleri de yolculuğumuza dahil etmek istiyoruz. Seyahatle ilgili ipuçları, seyahat sağlığı, konaklama önerileri, lezzet durakları ve daha fazlası hakkında yazılarımızı bulabilirsiniz.
+                        Unutulmaz anılar biriktirmenize yardımcı olmak için seyahat önerilerimizi ve yerel kültürleri tanıtan makalelerimizi de takip edebilirsiniz. Gezilecek yerlerin ötesinde, farklı kültürlerle tanışarak zenginleşeceğiniz deneyimler sunmaktan mutluluk duyuyoruz.
+                        Sizlerle birlikte bu seyahat yolculuğunda bir arada olmayı dört gözle bekliyoruz. Her yazımızda sizlere heyecan verici, rüya gibi tatil rotaları sunmak için buradayız. Tatil Seyahat Bloğu'nu ziyaret ettiğiniz için teşekkür ederiz ve keyifli okumalar dileriz!
+                        Haydi, keşfe çıkalım!
+                    </p>
+                </div>
+                @Html.Action("Partial1","Default")
+                <div class="grids">
+                    <div class="box1">
+                        @Html.Action("Partial3","Default")
+                        @Html.Action("Partial4","Default")
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
